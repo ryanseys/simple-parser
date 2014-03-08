@@ -1,0 +1,5 @@
+scan.c
+gram.c
+gram.h
+*.o
+*.out
