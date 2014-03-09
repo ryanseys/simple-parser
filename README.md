@@ -15,6 +15,14 @@ To clean up files:
 $ make clean
 ```
 
+## Tests
+
+To test the output of the parser:
+
+```bash
+$ ./tests.sh
+```
+
 ## License
 
 MIT &copy; [Ryan Seys](https://ryanseys.com)
