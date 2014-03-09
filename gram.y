@@ -40,7 +40,6 @@ F : '(' E ')' { $$ = $2; }
   | '-' E { $$ = - $2; } %prec UMINUS
   ;
 
-
 %%
 int yyerror( char * s ) {
   fprintf( stderr, "ERROR: %s\n", s );

@@ -15,7 +15,6 @@ int yywrap();
 }
 
 \n return NEWLINE;
-
 . return *yytext;
 %%
 int yywrap() {
