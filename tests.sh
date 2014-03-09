@@ -70,3 +70,75 @@ else
   echo "Expected: $RES6"
   echo "Actual:   $OUT6"
 fi
+
+OUT7=$(echo '(1+1)*4^log((6^2)^(1/2))' | ./add.out)
+RES7='23.975998'
+
+if [ "$OUT7" == "$RES7" ]
+then
+  echo "Test passed! Result: $OUT7"
+else
+  echo "Test failed!"
+  echo "Expected: $RES7"
+  echo "Actual:   $OUT7"
+fi
+
+OUT8=$(echo '(1+1)*4^log((6^2)^1/2)' | ./add.out)
+RES8='23.975998'
+
+if [ "$OUT8" == "$RES8" ]
+then
+  echo "Test passed! Result: $OUT8"
+else
+  echo "Test failed!"
+  echo "Expected: $RES8"
+  echo "Actual:   $OUT8"
+fi
+
+OUT8=$(echo '2^1/2' | ./add.out)
+RES8='1.414214'
+
+if [ "$OUT8" == "$RES8" ]
+then
+  echo "Test passed! Result: $OUT8"
+else
+  echo "Test failed!"
+  echo "Expected: $RES8"
+  echo "Actual:   $OUT8"
+fi
+
+OUT9=$(echo '2^1+1' | ./add.out)
+RES9='3.000000'
+
+if [ "$OUT9" == "$RES9" ]
+then
+  echo "Test passed! Result: $OUT9"
+else
+  echo "Test failed!"
+  echo "Expected: $RES9"
+  echo "Actual:   $OUT9"
+fi
+
+OUT10=$(echo '1^2^3^4' | ./add.out)
+RES10='1.000000'
+
+if [ "$OUT10" == "$RES10" ]
+then
+  echo "Test passed! Result: $OUT10"
+else
+  echo "Test failed!"
+  echo "Expected: $RES10"
+  echo "Actual:   $OUT10"
+fi
+
+OUT10=$(echo '2^3^2' | ./add.out)
+RES10='512.000000'
+
+if [ "$OUT10" == "$RES10" ]
+then
+  echo "Test passed! Result: $OUT10"
+else
+  echo "Test failed!"
+  echo "Expected: $RES10"
+  echo "Actual:   $OUT10"
+fi
