@@ -9,23 +9,23 @@ int yylex();
 %type <aDouble>	S E T P F
 
 %union {
-    double aDouble;
+  double aDouble;
 }
 
 %%
-S	:
-	{ $$ = 0; }
-	| S E NEWLINE
-	{ printf("%f\n", $2 ); $$ = 0; }
-	;
+S :
+  { $$ = 0; }
+  | S E NEWLINE
+  { printf("%f\n", $2 ); $$ = 0; }
+  ;
 
-E	: E '+' T
-	{ $$ = $1 + $3; }
-	| E '-' T
-	{ $$ = $1 - $3; }
-	| T
-	{ $$ = $1; }
-	;
+E : E '+' T
+  { $$ = $1 + $3; }
+  | E '-' T
+  { $$ = $1 - $3; }
+  | T
+  { $$ = $1; }
+  ;
 
 T : T '*' P
   { $$ = $1 * $3; }
@@ -49,6 +49,6 @@ F : '(' E ')'
 
 %%
 int yyerror( char * s ) {
-    fprintf( stderr, "%s\n", s );
-    return 0;
+  fprintf( stderr, "%s\n", s );
+  return 0;
 }
