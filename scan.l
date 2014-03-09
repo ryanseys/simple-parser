@@ -10,7 +10,7 @@ int yywrap();
 %%
 [ \t\r] ;
 [-+]?[0-9]+	{
-    	    yylval.anInt = atoi((char *)&yytext[0]);
+    	yylval.anInt = atoi((char *) &yytext[0]);
 	    return INTEGER;
 	}
 
@@ -20,6 +20,5 @@ int yywrap();
 int
 yywrap()
 {
-    return 1;
+  return 1;
 }
-
