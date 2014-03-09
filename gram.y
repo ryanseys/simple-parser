@@ -5,18 +5,18 @@ int yyerror();
 int yylex();
 %}
 
-%token <anInt>	INTEGER NEWLINE
-%type <anInt>	S E T P F
+%token <aDouble>	DOUBLE NEWLINE
+%type <aDouble>	S E T P F
 
 %union {
-    int anInt;
+    double aDouble;
 }
 
 %%
 S	:
 	{ $$ = 0; }
 	| S E NEWLINE
-	{ printf( "Result is %d\n", $2 ); $$ = 0; }
+	{ printf("%f\n", $2 ); $$ = 0; }
 	;
 
 E	: E '+' T
@@ -43,14 +43,12 @@ P : F '^' P
 
 F : '(' E ')'
   { ($$ = $2) }
-  | INTEGER
+  | DOUBLE
   { $$ = $1; }
   ;
 
 %%
-int
-yyerror( char * s )
-{
+int yyerror( char * s ) {
     fprintf( stderr, "%s\n", s );
     return 0;
 }

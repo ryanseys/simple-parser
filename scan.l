@@ -10,15 +10,13 @@ int yywrap();
 %%
 [ \t\r] ;
 [-+]?[0-9]+	{
-    	yylval.anInt = atoi((char *) &yytext[0]);
-	    return INTEGER;
+    	yylval.aDouble = atof((char *) &yytext[0]);
+	    return DOUBLE;
 	}
 
 \n	return NEWLINE;
 .	return *yytext;
 %%
-int
-yywrap()
-{
+int yywrap() {
   return 1;
 }

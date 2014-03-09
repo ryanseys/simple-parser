@@ -8,8 +8,7 @@ extern int yyparse();
 
 #define YYDEBUG 1
 
-int main()
-{
-/*     yydebug = 1; */
+int main() {
+    // yydebug = 1;
     yyparse();
 }
