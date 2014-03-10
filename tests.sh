@@ -84,7 +84,7 @@ else
 fi
 
 OUT8=$(echo '(1+1)*4^log((6^2)^1/2)' | ./add.out)
-RES8='23.975998'
+RES8='109.953027'
 
 if [ "$OUT8" == "$RES8" ]
 then
@@ -96,7 +96,7 @@ else
 fi
 
 OUT8=$(echo '2^1/2' | ./add.out)
-RES8='1.414214'
+RES8='1.000000'
 
 if [ "$OUT8" == "$RES8" ]
 then
