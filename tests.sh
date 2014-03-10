@@ -142,3 +142,15 @@ else
   echo "Expected: $RES10"
   echo "Actual:   $OUT10"
 fi
+
+OUT11=$(echo 'exp(4)' | ./add.out)
+RES11='54.598150'
+
+if [ "$OUT11" == "$RES11" ]
+then
+  echo "Test passed! Result: $OUT11"
+else
+  echo "Test failed!"
+  echo "Expected: $RES11"
+  echo "Actual:   $OUT11"
+fi
