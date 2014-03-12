@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 
+# Testcases
 out[1]=$(echo '(1 * 4) ^ (4 / 2) * 5' | ./add.out)
 res[1]='80.000000'
 out[2]=$(echo '1 / 4' | ./add.out)
